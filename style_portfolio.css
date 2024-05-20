@@ -1,0 +1,537 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(223, 229, 232, 1);; /* Modify as per your color scheme */
+}
+
+.logo img {
+    max-width: 100%; /* Ensures the logo is responsive */
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    text-transform: uppercase;
+}
+
+.nav-links a:hover{
+    padding-bottom: 2%;
+    border-bottom-style: solid;
+}
+
+/* Styles specific to mobile and burger icon */
+.burger {
+    display: none; /* Burger is hidden on larger screens */
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px; /* Width of each line of the burger menu */
+    height: 3px; /* Height of each line */
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/*Footer styles*/
+footer {
+    background-color: rgba(54, 61, 71, 1);
+    padding: 1%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav {
+    text-align: right;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    display: inline-block; 
+    margin-left: 20px;
+}
+.footer-nav ul li a{
+    text-decoration: none;
+    color: rgba(223, 229, 232, 1);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.675rem;
+}
+
+.footer-nav ul li:first-child {
+    margin-left: 0;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid rgba(223, 229, 232, 1);
+    margin: 2% 0;
+}
+
+.footer-copyright {
+    text-align: right;
+    font-size: 0.675rem;
+    color: rgba(223, 229, 232, 1);
+}
+
+
+@media screen and (max-width:600px){
+/*Navigation - Hamburger*/
+.nav-links {
+    position: absolute;
+    right: 0;
+    height: 0;
+    top: 60px; /* Adjust based on your header's height */
+    background-color: rgba(54, 61, 71, 1);
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    z-index: 100;
+}
+
+.nav-links li {
+    padding: 15px 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links li a{
+  color: rgba(223, 229, 232, 1);
+}
+
+.burger {
+    display: block;
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+.footer-logo{
+    width: 30%;
+    height: auto;
+}
+
+/*Layout*/
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+}
+
+h1 {
+    text-align: center; /* Centers the main heading */
+    font-size: 1.5rem; /* Larger font size for visibility */
+    background-color: rgba(223, 229, 232, 1);
+    color: rgba(54, 61, 71, 1);
+    font-style: normal;
+    padding-bottom: 5%;
+}
+
+.project {
+    position: relative; /* Sets the position context for absolutely positioned children */
+    overflow: hidden; /* Prevents content from spilling outside */
+}
+
+.Meomics{
+    background-color: rgba(145, 178, 189, 1) ;
+}
+
+.Flare{
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.Nine{
+    background-color: rgba(145, 178, 189, 1) ;
+}
+
+.Secure{
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.project img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+.project-details{
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    width: 100%; /* Ensures the title can use full width if needed */
+    text-align: center; 
+}
+
+.one{
+    background-image: url(images/Meomics.png);
+}
+
+.two {
+    background-image: url(images/Flare-bright.png);
+}
+
+.three {
+    background-image: url(images/nine-lives.png);
+}
+
+.four{
+    background-image: url(images/i3secure.png);
+}
+
+.project-title h2 {
+    font-size: 2.5rem; /* Sets the font size for the title */
+    margin: 0; /* Removes any default margin */
+    padding: 0 10px; /* Adds horizontal padding */
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 10%;
+}
+
+.project-title p {
+    color: #ffffff;
+    margin: 5px 0 0; /* Adds top margin */
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    padding: 2% 2%;
+    text-transform: uppercase;
+    background-color: transparent;
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+}
+
+.project-description {
+    padding: 15px; /* Padding within description box for readability */
+    line-height: 1.4; /* Improved line height for readability */
+    margin-top: 5%; /* Adds space between the image and text content */
+}
+
+.project-description p {
+    margin-bottom: 2%;
+}
+
+}
+
+@media screen and (min-width:601px) and (max-width:900px){
+
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+.footer-logo{
+    width: 30%;
+    height: auto;
+}
+
+/*Layout*/
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: rgba(223, 229, 232, 1);
+    font-style: normal;
+    color: rgba(54, 61, 71, 1);
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.project {
+    position: relative; /* Sets the position context for absolutely positioned children */
+    overflow: hidden;
+}
+
+.Meomics{
+    background-color: rgba(145, 178, 189, 1) ;
+}
+
+.Flare{
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.Nine{
+    background-color: rgba(145, 178, 189, 1) ;
+}
+
+.Secure{
+    background-color: rgba(223, 229, 232, 1);
+}
+
+
+.project-details{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.project-title {
+    width: 50%; /* Ensures the title can use full width if needed */
+    text-align: center; 
+}
+
+
+.one{
+    background-image: url(images/Meomics.png);
+}
+
+.two {
+    background-image: url(images/Flare-bright.png);
+}
+
+.three {
+    background-image: url(images/nine-lives.png);
+}
+
+.four{
+    background-image: url(images/i3secure.png);
+}
+
+.project-title h2 {
+    font-size: 2.5rem; /* Sets the font size for the title */
+    margin: 0; /* Removes any default margin */
+    padding: 0 10px; /* Adds horizontal padding */
+    color: #ffffff;
+    text-transform: uppercase;
+    align-content: center;
+    margin-top: 40%;
+}
+
+.project-title p {
+    color: #ffffff;
+    margin: 5px 0 0; /* Adds top margin */
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    padding: 2% 2%;
+    text-transform: uppercase;
+    background-color: transparent;
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: center;
+    align-content: center;
+}
+
+.project-description {
+    padding: 15px; /* Padding within description box for readability */
+    line-height: 1.4; /* Improved line height for readability */
+    margin-top: 5%; /* Adds space between the image and text content */
+    width: 50%;
+}
+
+.project-description p {
+    margin-bottom: 2%;
+}
+
+.Flare .project-details {
+    flex-direction: row-reverse; /* Reverses the direction of flex items */
+}
+
+.Secure .project-details {
+    flex-direction: row-reverse; /* Reverses the direction of flex items */
+}
+}
+
+@media screen and (min-width:901px){
+
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+.footer-logo{
+    width: 10%;
+    height: auto;
+}
+
+/*Layout*/
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+}
+
+h1 {
+    text-align: center; /* Centers the main heading */
+    font-size: 1.5rem; /* Larger font size for visibility */
+    background-color: rgba(223, 229, 232, 1);
+    color: rgba(54, 61, 71, 1);
+    padding: 2% 2% 2% 2%;
+}
+
+.project {
+    position: relative; 
+    overflow: hidden;
+}
+
+.Meomics{
+    background-color: rgba(145, 178, 189, 1) ;
+}
+
+.Flare{
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.Nine{
+    background-color: rgba(145, 178, 189, 1) ;
+}
+
+.Secure{
+    background-color: rgba(223, 229, 232, 1);
+}
+
+
+.project-details{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.project-title {
+    width: 35%; /* Ensures the title can use full width if needed */
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.one{
+    background-image: url(images/Meomics.png);
+}
+
+.two {
+    background-image: url(images/Flare-bright.png);
+}
+
+.three {
+    background-image: url(images/nine-lives.png);
+}
+
+.four{
+    background-image: url(images/i3secure.png);
+}
+
+.project-title h2 {
+    font-size: 2.5rem; /* Sets the font size for the title */
+    margin: 0; /* Removes any default margin */
+    padding: 0 10px; /* Adds horizontal padding */
+    color: #ffffff;
+    text-transform: uppercase;
+    align-content: center;
+}
+
+.project-title p {
+    color: #ffffff;
+    margin: 5px 0 0; /* Adds top margin */
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    padding: 2% 2%;
+    text-transform: uppercase;
+    background-color: transparent;
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: center;
+    align-content: center;
+}
+
+.project-description {
+    padding: 15px; /* Padding within description box for readability */
+    line-height: 1.4; /* Improved line height for readability */
+    margin-top: 2%; /* Adds space between the image and text content */
+    width: 50%;
+}
+
+.project-description p {
+    margin-bottom: 2%;
+}
+
+.Flare .project-details {
+    flex-direction: row-reverse; /* Reverses the direction of flex items */
+}
+
+.Secure .project-details {
+    flex-direction: row-reverse; /* Reverses the direction of flex items */
+}
+
+}

@@ -1,0 +1,680 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(223, 229, 232, 1);; /* Modify as per your color scheme */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    text-transform: uppercase;
+}
+
+.nav-links a:hover{
+    padding-bottom: 2%;
+    border-bottom-style: solid;
+}
+
+/* Styles specific to mobile and burger icon */
+.burger {
+    display: none; /* Burger is hidden on larger screens */
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px; /* Width of each line of the burger menu */
+    height: 3px; /* Height of each line */
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/*Footer styles*/
+footer {
+    background-color: rgba(54, 61, 71, 1);
+    padding: 1%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav {
+    text-align: right;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    display: inline-block; 
+    margin-left: 20px;
+}
+.footer-nav ul li a{
+    text-decoration: none;
+    color: rgba(223, 229, 232, 1);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.675rem;
+}
+
+.footer-nav ul li:first-child {
+    margin-left: 0;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid rgba(223, 229, 232, 1);
+    margin: 2% 0;
+}
+
+.footer-copyright {
+    text-align: right;
+    font-size: 0.675rem;
+    color: rgba(223, 229, 232, 1);
+}
+
+@media screen and (max-width:600px){
+/*Navigation - Hamburger*/
+.nav-links {
+    position: absolute;
+    right: 0;
+    height: 0;
+    top: 60px; /* Adjust based on your header's height */
+    background-color: rgba(54, 61, 71, 1);
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    z-index: 100;
+}
+
+.nav-links li {
+    padding: 15px 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links li a{
+  color: rgba(223, 229, 232, 1);
+}
+
+.burger {
+    display: block;
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+.footer-logo{
+    width: 30%;
+    height: auto;
+}
+
+/*Layout*/
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+}
+h1 {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+.title-2{
+    font-style: normal;
+    font-size: 1.5rem;
+    color: rgba(54, 61, 71, 1);
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+/*mission*/
+
+.mission-statement{
+    background-color: rgba(223, 229, 232, 1);
+    align-items: center;
+    text-align: center;
+}
+
+.video-placeholder {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+}
+
+.video-placeholder iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%; /* Set the width to 90% of the container */
+    height: 80%; /* Set the height to 90% of the container */
+    transform: translate(-50%, -50%); /* Centers the iframe */
+}
+
+/*Key offerings*/
+
+.key-offerings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.offering {
+    text-align: center;
+    margin-bottom: 2%; /* Space between offerings */
+}
+
+.offering img {
+    width: 10%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/* Partners */
+.partners {
+    background-color: rgba(145, 178, 189, 1);
+    overflow: hidden; /* Hides any overflow from the carousel */
+    position: relative; /* Ensures the position of arrows relative to the section */
+    max-width: 100%;
+}
+
+.scroll-container {
+    max-width: 100%;
+    overflow: hidden; /* Prevents content from spilling out */
+}
+
+.partners-logo {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents the flex items from wrapping */
+    transition: transform 0.5s ease;
+    will-change: transform; /* Optimizes animations */
+}
+
+.partners-logo p{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 2% 10% 2% 10%;
+    font-weight: 700;
+}
+
+.partner {
+    flex: 0 0 100%; /* Each partner takes exactly 100% of the viewport width */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px; /* Adds padding for visual spacing around content */
+}
+
+.partner img {
+    max-width: 100px; /* Specific size for partner logos */
+    height: auto;
+    margin: auto; /* Centers image horizontally within its container */
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    color: rgba(54, 61, 71, 1);
+    font-size: 24px; /* Increases the size of the arrow buttons */
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.button.prev {
+    left: 0;
+}
+
+.button.next {
+    right: 0;
+}
+
+/*CEO*/
+.Alasdair {
+    background-color:  rgba(223, 229, 232, 1);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically */
+}
+
+.profile-photo {
+    margin-bottom: 2%; /* Space below the photo */
+}
+
+.linkedin-icon {
+    margin-bottom: 2%; /* Space below the icon before text */
+}
+
+.profile-details p {
+    text-align: center; /* Center-align text */
+    padding: 10% 10% 10% 10%;
+}
+
+.profile-details {
+    background-color: rgba(242, 242, 242, 1);
+    margin: 10% 10% 10% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+}
+
+@media screen and (min-width:601px) and (max-width:900px){
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+.footer-logo{
+    width: 30%;
+    height: auto;
+}
+
+
+    /*Layout*/
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+}
+
+/*mission*/
+h1 {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+.title-2{
+    font-style: normal;
+    font-size: 1.5rem;
+    color: rgba(54, 61, 71, 1);
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.mission-statement{
+    background-color: rgba(223, 229, 232, 1);
+    align-items: center;
+    text-align: center;
+}
+
+.mission-statement p{
+    padding: 2% 10% 2% 10%;
+}
+
+.video-placeholder {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+}
+
+.video-placeholder iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%; /* Set the width to 90% of the container */
+    height: 80%; /* Set the height to 90% of the container */
+    transform: translate(-50%, -50%); /* Centers the iframe */
+}
+
+/*Key offerings*/
+.key-offerings{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.offering {
+    text-align: center;
+    padding: 2% 2%;
+}
+
+.offering img {
+    width: 20%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/* Partners */
+.partners {
+    background-color: rgba(145, 178, 189, 1);
+    overflow: hidden; /* Hides any overflow from the carousel */
+    position: relative; /* Ensures the position of arrows relative to the section */
+    max-width: 100%;
+}
+
+.scroll-container {
+    max-width: 100%;
+    overflow: hidden; /* Prevents content from spilling out */
+}
+
+.partners-logo {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents the flex items from wrapping */
+    transition: transform 0.5s ease;
+    will-change: transform; /* Optimizes animations */
+}
+
+.partners-logo p{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 2% 10% 2% 10%;
+    font-weight: 700;
+}
+
+.partner {
+    flex: 0 0 100%; /* Each partner takes exactly 100% of the viewport width */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px; /* Adds padding for visual spacing around content */
+}
+
+.partner p{
+    text-transform: uppercase;
+}
+
+.partner img {
+    max-width: 100px; /* Specific size for partner logos */
+    height: auto;
+    margin: auto; /* Centers image horizontally within its container */
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    color: rgba(54, 61, 71, 1);
+    font-size: 24px; /* Increases the size of the arrow buttons */
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.button.prev {
+    left: 0;
+}
+
+.button.next {
+    right: 0;
+}
+
+/*CEO*/
+.Alasdair {
+    background-color:  rgba(223, 229, 232, 1);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.profile-photo {
+    width: 50%;
+    height: 50%;
+    padding: 2% 2% 2% 2%;
+}
+
+.profile-details{
+    width: 50%;
+    height: auto;
+    padding: 2% 2% 2% 2%;
+
+}
+
+}
+
+@media screen and (min-width:901px){
+
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+.footer-logo{
+    width: 10%;
+    height: auto;
+}
+
+/*Layout*/
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+}
+
+/*mission*/
+
+h1 {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+.mission-statement{
+    background-color: rgba(223, 229, 232, 1);
+    align-items: center;
+    text-align: center;
+}
+
+.mission-statement p{
+    padding: 1% 5% 1% 5%;
+}
+
+.video-placeholder {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    width: 100%; /* Ensures the container takes the full width of its parent */
+}
+
+.video-placeholder iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%; /* Set the width to 90% of the container */
+    height: 80%; /* Set the height to 90% of the container */
+    transform: translate(-50%, -50%); /* Centers the iframe */
+}
+
+/*Key offerings*/
+.key-offerings{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.offering {
+    text-align: center;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+.offering img {
+    width: 15%;
+    height: auto;
+    margin-bottom: 1%;
+}
+
+/*Partners*/
+.partners{
+    background-color: rgba(145, 178, 189, 1);
+    align-items: center;
+    text-align: center;
+}
+
+.partners p{
+    padding: 2% 2% 2% 2%;
+}
+
+h2 {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 2%;
+}
+
+
+.button {
+    display: none;
+}
+
+.partners-logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.partner{
+    width: 25%;
+}
+
+.partners-logo img{
+    width: 50%;
+    height: 50%;
+}
+
+.partners-logo p{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 2% 10% 2% 10%;
+    font-weight: 700;
+}
+
+/*CEO*/
+.Alasdair {
+    background-color:  rgba(223, 229, 232, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.profile-photo {
+    width: 30%;
+    height: auto;
+    padding: 2% 2% 2% 2%;
+}
+
+.profile-details{
+    width: 50%;
+    height: auto;
+    padding: 2% 2% 2% 2%;
+
+}
+
+.title-2{
+    text-align: center;
+}
+
+.linkedin-icon{
+    align-self: flex-start;
+    margin-top: 5%;
+}
+
+
+}

@@ -1,0 +1,546 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(223, 229, 232, 1);; /* Modify as per your color scheme */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    text-transform: uppercase;
+}
+
+.nav-links a:hover{
+    padding-bottom: 2%;
+    border-bottom-style: solid;
+}
+
+/* Styles specific to mobile and burger icon */
+.burger {
+    display: none; /* Burger is hidden on larger screens */
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px; /* Width of each line of the burger menu */
+    height: 3px; /* Height of each line */
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+/*Footer styles*/
+footer {
+    background-color: rgba(54, 61, 71, 1);
+    padding: 1%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav {
+    text-align: right;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    display: inline-block; 
+    margin-left: 20px;
+}
+.footer-nav ul li a{
+    text-decoration: none;
+    color: rgba(223, 229, 232, 1);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.675rem;
+}
+
+.footer-nav ul li:first-child {
+    margin-left: 0;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid rgba(223, 229, 232, 1);
+    margin: 2% 0;
+}
+
+.footer-copyright {
+    text-align: right;
+    font-size: 0.675rem;
+    color: rgba(223, 229, 232, 1);
+}
+
+
+@media screen and (max-width:600px){
+
+/*Navigation - Hamburger*/
+.nav-links {
+    position: absolute;
+    right: 0;
+    height: 0;
+    top: 60px; /* Adjust based on your header's height */
+    background-color: rgba(54, 61, 71, 1);
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    z-index: 100;
+}
+
+.nav-links li {
+    padding: 15px 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links li a{
+    color: rgba(223, 229, 232, 1);
+}
+
+.burger {
+    display: block;
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+.footer-logo{
+    width: 30%;
+    height: auto;
+}
+
+/*Layout*/
+main {
+    width: 100%;
+}
+
+h2 {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+/*contact section*/
+.contact {
+    background-color: rgba(223, 229, 232, 1);
+    padding: 20px;
+    color: rgba(54, 61, 71, 1);
+    box-sizing: border-box;
+}
+
+.contact p {
+    text-align: center; /* Center aligning the paragraph text */
+    margin-bottom: 20px; /* Space below the paragraph */
+    line-height: 1.6; /* Increased line height for readability */
+}
+
+#p2{
+    display: none;
+}
+
+.contact-details {
+    margin-bottom: 20px; /* Space above the form */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center; /* Vertically aligns the icon with the text */
+    justify-content: center; /* Horizontally center content */
+    margin-bottom: 10px; /* Space between contact details */
+}
+
+.contact-icon {
+    width: 30px; /* Size of the icons */
+    height: 30px; /* Maintaining aspect ratio */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.contact-form {
+    background-color: rgba(145, 178, 189, 1); 
+    padding: 15px;
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    margin-top: 10%;
+}
+
+.form-field {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+.form-field label {
+    display: block; /* Ensures the label is on a new line */
+    margin-bottom: 5px; /* Space between label and input field */
+}
+
+input, textarea {
+    width: 100%;
+    background-color: transparent; 
+    border: none; 
+    border-bottom: 2px solid rgba(54, 61, 71, 1); 
+    outline: none; 
+    padding: 10px 0; 
+    color: rgba(54, 61, 71, 1);
+}
+
+.submit-button {
+    border: 3px solid rgba(54, 61, 71, 1);
+    border-radius: 0;
+    padding: 2% 2%;  /* You might consider changing percentage padding to fixed padding for more consistent rendering */
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%; /* Keeps existing top margin */
+    background-color: transparent;
+    display: block; /* Ensures the button is a block-level element */
+    width: auto; /* Adjusts the width automatically based on content size */
+    margin-left: auto; /* Automatically calculates left margin */
+    margin-right: auto; /* Automatically calculates right margin */
+}
+
+/*CTA links*/
+#consult {
+    border: 3px solid rgba(54, 61, 71, 1);
+    border-radius: 0;
+    padding: 2% 2%;
+    text-transform: uppercase; 
+    font-weight: bold; 
+    text-align: center;
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+}
+
+}
+
+@media screen and (min-width:601px) and (max-width:900px){
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+.footer-logo{
+    width: 30%;
+    height: auto;
+}
+
+/*contact section*/
+main { 
+    width: 100%;
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.title-2{
+    font-style: normal;
+    font-size: 1.5rem;
+    color: rgba(54, 61, 71, 1);
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+.contact {
+    background-color: rgba(223, 229, 232, 1);
+    width: 100%;
+    padding: 20px;
+    color: rgba(54, 61, 71, 1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 2%;
+}
+
+#p2{
+    margin-bottom: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    line-height: 1.6;
+}
+
+#p1{
+    display: none;
+}
+
+.contact-details {
+    margin-bottom: 20px; /* Space above the form */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 10px; 
+}
+
+.contact-icon {
+    width: 30px; /* Size of the icons */
+    height: 30px; /* Maintaining aspect ratio */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.contact-form {
+    background-color: rgba(145, 178, 189, 1);
+    padding: 2% 2%;
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
+.form-field {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+.form-field label {
+    display: block; /* Ensures the label is on a new line */
+    margin-bottom: 5px; /* Space between label and input field */
+}
+
+input, textarea {
+    width: 100%;
+    background-color: transparent; 
+    border: none; 
+    border-bottom: 2px solid rgba(54, 61, 71, 1); 
+    outline: none; 
+    padding: 10px 0; 
+    color: rgba(54, 61, 71, 1);
+}
+
+.submit-button {
+    border: 3px solid rgba(54, 61, 71, 1);
+    border-radius: 0;
+    padding: 2% 2%;  /* You might consider changing percentage padding to fixed padding for more consistent rendering */
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%; /* Keeps existing top margin */
+    background-color: transparent;
+    display: block; /* Ensures the button is a block-level element */
+    width: auto; /* Adjusts the width automatically based on content size */
+    margin-left: auto; /* Automatically calculates left margin */
+    margin-right: auto; /* Automatically calculates right margin */
+}
+
+/*CTA link*/
+#consult {
+    border: 3px solid rgba(54, 61, 71, 1);
+    border-radius: 0;
+    padding: 2% 2%;
+    text-transform: uppercase; 
+    font-weight: bold; 
+    text-align: center;
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+}
+
+@media screen and (min-width:901px){
+
+#logo{
+    width: 50%;
+    height: auto;
+}
+
+.footer-logo{
+    width: 10%;
+    height: auto;
+}
+
+main { 
+    width: 100%;
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.title-2{
+    font-style: normal;
+    font-size: 1.5rem;
+    color: rgba(54, 61, 71, 1);
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+.contact {
+    background-color: rgba(223, 229, 232, 1);
+    width: 100%;
+    padding: 20px;
+    color: rgba(54, 61, 71, 1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 2%;
+}
+
+.contact p {
+    line-height: 1.6; /* Increased line height for readability */
+}
+
+#p2{
+    padding-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.contact-details {
+    margin-bottom: 20px; /* Space above the form */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 10px; 
+}
+
+.contact-icon {
+    width: 30px; /* Size of the icons */
+    height: 30px; /* Maintaining aspect ratio */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.contact-form {
+    background-color: rgba(145, 178, 189, 1);
+    padding: 2% 2%;
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
+.form-field {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+.form-field label {
+    display: block; /* Ensures the label is on a new line */
+    margin-bottom: 5px; /* Space between label and input field */
+}
+
+input, textarea {
+    width: 100%;
+    background-color: transparent; 
+    border: none; 
+    border-bottom: 2px solid rgba(54, 61, 71, 1); 
+    outline: none; 
+    padding: 10px 0; 
+    color: rgba(54, 61, 71, 1);
+}
+
+.submit-button {
+    border: 3px solid rgba(54, 61, 71, 1);
+    border-radius: 0;
+    padding: 2% 2%;  /* You might consider changing percentage padding to fixed padding for more consistent rendering */
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%; /* Keeps existing top margin */
+    background-color: transparent;
+    display: block; /* Ensures the button is a block-level element */
+    width: auto; /* Adjusts the width automatically based on content size */
+    margin-left: auto; /* Automatically calculates left margin */
+    margin-right: auto; /* Automatically calculates right margin */
+}
+
+#p1{
+    display: none;
+}
+
+
+
+/*CTA link*/
+#consult {
+    border: 3px solid rgba(54, 61, 71, 1);
+    border-radius: 0;
+    padding: 1%;
+    text-transform: uppercase; 
+    font-weight: bold; 
+    text-align: center;
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    margin-right: 35%;
+    margin-left: 35%;
+}
+}
