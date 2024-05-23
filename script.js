@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function submitFormToServer(formData) {
     const response = await fetch(
-      "https://eddyline-backend.onrender.com/add",
+      "https://eddyline-backend-0clj.onrender.com/add",
       {
         method: "POST",
         headers: {
