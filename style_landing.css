@@ -789,6 +789,8 @@ h1{
     color: rgba(54, 61, 71, 1);
     padding: 5% 2% 5% 2%;
     font-style: italic;
+    font-size: 1.5em; /* Adjust this value to increase/decrease the font size */
+    line-height: 1.6; /* Optional: Adjust line height for better readability */
 }
 
 /*Alasdair section*/
