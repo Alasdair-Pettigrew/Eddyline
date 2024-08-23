@@ -316,11 +316,13 @@ h2{
     justify-content: center;
 }
 .story {
-    min-width: 100%; /* Each story takes full width of the container */
+    min-width: 60%; /* Reduces the width of each story to 60% of the container */
+    max-width: 60%; /* Ensures that the story does not exceed 60% width */
     box-sizing: border-box;
     padding: 10%;
-    text-align: center;
+    text-align: center; /* Ensures text inside each story is center-aligned */
     background-color: rgba(242, 242, 242, 1);
+    margin: 0 auto; /* Center the story within the slider */
 }
 .nav-button {
     position: absolute;
