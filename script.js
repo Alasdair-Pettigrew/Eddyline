@@ -62,26 +62,67 @@ function moveService(step) {
 }
 
 //Carousel testimonials
-let currentTestimonial = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const testimonials = document.querySelectorAll(".testimonial");
+  const prevArrow = document.querySelector(".arrow.prev");
+  const nextArrow = document.querySelector(".arrow.next");
 
-function moveTestimonial(step) {
-    const testimonials = document.querySelectorAll('.testimonial');
-    const totalTestimonials = testimonials.length;
+  let currentIndex = 0;
+  let autoPlayInterval = null;
+  const intervalTime = 5000; // 5 seconds
 
-    // Update the current testimonial index based on the direction of navigation (left or right)
-    currentTestimonial += step;
+  // 1) Show the testimonial at `index`, hide others
+  function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+      testimonial.classList.remove("active");
+      if (i === index) {
+        testimonial.classList.add("active");
+      }
+    });
+  }
 
-    // Wrap around to the first testimonial if moving past the last one
-    if (currentTestimonial >= totalTestimonials) {
-        currentTestimonial = 0;
-    } else if (currentTestimonial < 0) {
-        currentTestimonial = totalTestimonials - 1; // Wrap around to the last testimonial if moving before the first one
+  // 2) Move to next or prev testimonial
+  function moveTestimonial(step) {
+    currentIndex += step;
+    if (currentIndex < 0) {
+      currentIndex = testimonials.length - 1;
+    } else if (currentIndex >= testimonials.length) {
+      currentIndex = 0;
     }
+    showTestimonial(currentIndex);
+  }
 
-    // Move the testimonials-slider to the current testimonial
-    const slider = document.querySelector('.testimonials-slider');
-    slider.style.transform = `translateX(-${currentTestimonial * 100}%)`; // Shifts the slider by 100% of the view width per step
-}
+  // 3) Auto-rotate
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+      moveTestimonial(1);
+    }, intervalTime);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  // 4) Attach arrow events
+  if (prevArrow) {
+    prevArrow.addEventListener("click", () => {
+      stopAutoPlay();
+      moveTestimonial(-1);
+      startAutoPlay();
+    });
+  }
+  if (nextArrow) {
+    nextArrow.addEventListener("click", () => {
+      stopAutoPlay();
+      moveTestimonial(1);
+      startAutoPlay();
+    });
+  }
+
+  // 5) Initialize
+  showTestimonial(currentIndex); // Show first testimonial
+  startAutoPlay();              // Start auto rotation
+});
 
 
 
@@ -144,3 +185,27 @@ document.addEventListener("DOMContentLoaded", function () {
         .getElementById("contactFormSection")
         .scrollIntoView({ behavior: "instant" });
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.story');
+    const totalSlides = slides.length;
+    const slider = document.querySelector(".stories-slider");
+
+    function moveSlide(step) {
+        currentSlide += step;
+
+        // Loop through slides
+        if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        } else if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        }
+
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Attach event listeners to navigation buttons
+    document.querySelector(".nav-button.prev").addEventListener("click", () => moveSlide(-1));
+    document.querySelector(".nav-button.next").addEventListener("click", () => moveSlide(1));
+});

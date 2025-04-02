@@ -2,24 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    max-width: 100%;
-}
-
-*, *:before, *:after {
-    box-sizing: border-box;
 }
 
 html {
     font-size: 16px;
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
     width: 100%;
 }
 
 body {
     min-height: 100vh;
     width: 100%;
-    overflow-x: hidden;
 }
 
 header {
@@ -128,7 +121,6 @@ hr {
     width: 100%;
     overflow: hidden;
     transition: height 0.5s ease;
-    z-index: 100;
 }
 
 .nav-links li {
@@ -176,29 +168,42 @@ main {
     grid-template-columns: 1fr;
     overflow-y: auto; 
 }
-h1 {
-    color: rgba(54, 61, 71, 1);
-    margin-top: 5%;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-align: center; /* Center aligning the title */
-    margin-bottom: 15px; /* Space below the title */
-}
-
-.title-2{
-    font-style: normal;
-    font-size: 1.5rem;
-    color: rgba(54, 61, 71, 1);
-    text-align: center; /* Center aligning the title */
-    margin-bottom: 15px; /* Space below the title */
-}
 
 /*mission*/
-
 .mission-statement{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
     background-color: rgba(223, 229, 232, 1);
-    align-items: center;
-    text-align: center;
+    min-height: 75vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: rgba(54, 61, 71, 1);
+    margin-left: 4%;
+    margin-right: 2%;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(54, 61, 71, 1);
+    margin-left: 4%;
+    margin-right: 2%;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mission-statement p{
+    color: rgba(54, 61, 71, 1);
+    margin-left: 4%;
+    margin-right: 2%;
+    margin-top: 2%;
+    font-size: 1rem;
 }
 
 .video-placeholder {
@@ -219,63 +224,44 @@ h1 {
 }
 
 /*Key offerings*/
-
-.key-offerings{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(223, 229, 232, 1);
+.key-offerings-container {
+    text-align: center; /* Ensures the title is centered */
+    width: 100%; /* Ensures full width */
+    padding-bottom: 30px; /* Adds spacing between the title and the icons */
+    word-break: break-word;
+    overflow-wrap: break-word; /* For modern browsers */
+    hyphens: auto;             /* Optional for nicer hyphenation */
 }
 
-.offering {
-    text-align: center;
-    margin-bottom: 2%; /* Space between offerings */
-}
-
-.offering img {
-    width: 10%;
-    height: auto;
-    margin-bottom: 5px;
-}
-
-/* Partners */
-.partners {
-    background-color: rgba(145, 178, 189, 1);
-    overflow: hidden; /* Hides any overflow from the carousel */
-    position: relative; /* Ensures the position of arrows relative to the section */
-    max-width: 100%;
+.section-title {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+    font-style: normal;
+    font-size: 2.0rem;
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 60px; /* Space below the title */
+    word-break: break-word;
+    overflow-wrap: break-word; /* For modern browsers */
+    hyphens: auto;             /* Optional for nicer hyphenation */
 }
 
 .scroll-container {
-    max-width: 100%;
-    overflow: hidden; /* Prevents content from spilling out */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
-.partners-logo {
+.icons-wrapper {
     display: flex;
-    flex-wrap: nowrap; /* Prevents the flex items from wrapping */
     transition: transform 0.5s ease;
-    will-change: transform; /* Optimizes animations */
+    will-change: transform;  /* Optimizes animations */
 }
 
-.partners-logo p{
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    padding: 2% 10% 2% 10%;
-    font-weight: 700;
-}
-
-.partner {
-    flex: 0 0 100%; /* Each partner takes exactly 100% of the viewport width */
+.icon {
+    min-width: 100%;  /* Ensures each icon takes up the full width of the container */
     box-sizing: border-box;
     text-align: center;
-    padding: 20px; /* Adds padding for visual spacing around content */
-}
-
-.partner img {
-    max-width: 100px; /* Specific size for partner logos */
-    height: auto;
-    margin: auto; /* Centers image horizontally within its container */
+    /* padding: 20px;  Add padding for spacing */
 }
 
 .button {
@@ -285,23 +271,149 @@ h1 {
     border: none;
     background-color: transparent;
     color: rgba(54, 61, 71, 1);
-    font-size: 24px; /* Increases the size of the arrow buttons */
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
     z-index: 100;
 }
 
 .button.prev {
-    left: 0;
+    left: 10px;
 }
 
 .button.next {
-    right: 0;
+    right: 10px;
+}
+
+.icon img {
+    max-width: 80px;  /* Control size of the icon images */
+    height: auto;
+}
+
+.icon-title {
+    font-size: 1.2em;  /* Adjusted font size */
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 10px;  /* Space between the icon and its title */
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.icon-subtitle {
+    font-size: 1.0rem;  /* Adjusted font size */
+    font-weight: 400;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 10px;  /* Space between the icon and its title */
+    margin-bottom: 2.5rem;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* New Partners Section */
+.partners-section {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(145, 178, 189, 1);
+    min-height: 75vh;
+    width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word; /* For modern browsers */
+    hyphens: auto;             /* Optional for nicer hyphenation */
+}
+
+.partners-section h1 {
+    margin-bottom: 1rem; /* or any spacing you prefer */
+}
+.partners-section h2 {
+    margin-bottom: 1rem; /* or any spacing you prefer */
+}
+
+.partners-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.partners-section .container p {
+    color: rgba(54, 61, 71, 1);
+    margin-left: 4%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 1rem;
+}
+
+.partners-section .container ul {
+    color: rgba(54, 61, 71, 1);
+    list-style: disc;
+    margin-left: 10%; /* or whatever suits your layout */
+    font-size: 1rem;
+    width: 70%;
+}
+
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px; /* smaller side padding */
+  gap: 10px;
+  margin-top: 5%;
+  justify-content: center;
+}
+
+.partner-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 90%;
+  margin: 0 auto;  /* center if needed */
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.partner-card .logo img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.partner-info h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #222;
+}
+
+.partner-info p {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.4;
+}
+
+.partner-card {
+    width: 100%;
 }
 
 /*CEO*/
 .Alasdair {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
     background-color:  rgba(223, 229, 232, 1);
+    min-height: 75vh;
+    width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word; /* For modern browsers */
+    hyphens: auto;             /* Optional for nicer hyphenation */
 }
 
 .profile-container {
@@ -344,8 +456,7 @@ h1 {
     height: auto;
 }
 
-
-    /*Layout*/
+/*Layout*/
 main {
     min-height: 100vh;
     width: 100%;
@@ -356,32 +467,40 @@ main {
 }
 
 /*mission*/
-h1 {
-    color: rgba(54, 61, 71, 1);
-    margin-top: 5%;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-align: center; /* Center aligning the title */
-    margin-bottom: 15px; /* Space below the title */
-}
-
-.title-2{
-    font-style: normal;
-    font-size: 1.5rem;
-    color: rgba(54, 61, 71, 1);
-    text-align: center; /* Center aligning the title */
-    margin-bottom: 2%;
-    margin-top: 2%;
-}
-
 .mission-statement{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
     background-color: rgba(223, 229, 232, 1);
-    align-items: center;
-    text-align: center;
+    min-height: 75vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgba(54, 61, 71, 1);
+    margin-left: 6%;
+    margin-right: 3%;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(54, 61, 71, 1);
+    margin-left: 6%;
+    margin-right: 3%;
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .mission-statement p{
-    padding: 2% 10% 2% 10%;
+    color: rgba(54, 61, 71, 1);
+    margin-left: 6%;
+    margin-right: 3%;
+    margin-top: 2%;
+    font-size: 1.1rem;
 }
 
 .video-placeholder {
@@ -402,87 +521,151 @@ h1 {
 }
 
 /*Key offerings*/
-.key-offerings{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: rgba(223, 229, 232, 1);
+.key-offerings-container {
+    text-align: center; /* Ensures the title is centered */
+    width: 100%; /* Ensures full width */
+    padding-bottom: 30px; /* Adds spacing between the title and the icons */
 }
 
-.offering {
-    text-align: center;
-    padding: 2% 2%;
-}
-
-.offering img {
-    width: 20%;
-    height: auto;
-    margin-bottom: 5px;
-}
-
-/* Partners */
-.partners {
-    background-color: rgba(145, 178, 189, 1);
-    overflow: hidden; /* Hides any overflow from the carousel */
-    position: relative; /* Ensures the position of arrows relative to the section */
-    max-width: 100%;
-}
-
-.scroll-container {
-    max-width: 100%;
-    overflow: hidden; /* Prevents content from spilling out */
-}
-
-.partners-logo {
-    display: flex;
-    flex-wrap: nowrap; /* Prevents the flex items from wrapping */
-    transition: transform 0.5s ease;
-    will-change: transform; /* Optimizes animations */
-}
-
-.partners-logo p{
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    padding: 2% 10% 2% 10%;
-    font-weight: 700;
-}
-
-.partner {
-    flex: 0 0 100%; /* Each partner takes exactly 100% of the viewport width */
-    box-sizing: border-box;
-    text-align: center;
-    padding: 20px; /* Adds padding for visual spacing around content */
-}
-
-.partner p{
-    text-transform: uppercase;
-}
-
-.partner img {
-    max-width: 100px; /* Specific size for partner logos */
-    height: auto;
-    margin: auto; /* Centers image horizontally within its container */
-}
-
-.button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background-color: transparent;
+.section-title {
     color: rgba(54, 61, 71, 1);
-    font-size: 24px; /* Increases the size of the arrow buttons */
-    padding: 10px;
-    cursor: pointer;
-    z-index: 100;
+    margin-top: 5%;
+    font-style: normal;
+    font-size: 2.5rem;
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 60px; /* Space below the title */
 }
 
-.button.prev {
-    left: 0;
+.button.prev, .button.next {
+    display: none;
 }
 
-.button.next {
-    right: 0;
+.icons-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ensures 4 icons in a row */
+    gap: 20px; /* Adjust spacing between icons */
+    max-width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+}
+
+.icon {
+    display: flex;           /* Stack image & title vertically */
+    flex-direction: column;
+    justify-content: flex-end;  /* Push the title to the bottom if images differ in height */
+    align-items: center;     /* Center image & title horizontally */
+    min-height: 180px;       /* Ensures enough height so that titles can align at bottom */
+    box-sizing: border-box;
+}
+
+.icon img {
+    max-width: 80px;     /* Adjust as desired */
+    height: auto;
+    margin-bottom: 10px; /* Space above the title */
+    display: block;
+}
+
+.icon-title {
+    margin: 0;      /* Remove default paragraph margins */
+    font-size: 1.2rem;    /* Adjust as desired */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.icon-subtitle {
+    font-size: 1.0rem;  /* Adjusted font size */
+    font-weight: 400;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 10px;  /* Space between the icon and its title */
+    margin-bottom: 2.5rem;
+}
+
+/* New Partners Section */
+.partners-section {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(145, 178, 189, 1);
+    min-height: 75vh;
+    width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word; /* For modern browsers */
+    hyphens: auto;             /* Optional for nicer hyphenation */
+}
+
+.partners-section h1 {
+    margin-bottom: 1rem; /* or any spacing you prefer */
+}
+.partners-section h2 {
+    margin-bottom: 1rem; /* or any spacing you prefer */
+}
+
+.partners-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  gap: 1%;
+}
+
+.partners-section .container p {
+    color: rgba(54, 61, 71, 1);
+    margin-left: 6%;
+    margin-right: 3%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 1.1rem;
+}
+
+.partners-section .container ul {
+    color: rgba(54, 61, 71, 1);
+    list-style: disc;
+    margin-left: 10%; /* or whatever suits your layout */
+    font-size: 1.1rem;
+    width: 70%;
+}
+
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 5%;
+  justify-content: center;
+}
+
+.partner-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: calc(33.333% - 20px);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.partner-card .logo img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.partner-info h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #222;
+}
+
+.partner-info p {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.4;
 }
 
 /*CEO*/
@@ -494,12 +677,15 @@ h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* or center, if you prefer */
+    width: 100%;
 }
 
 .profile-photo {
-    width: 50%;
-    height: 50%;
-    padding: 2% 2% 2% 2%;
+    width: 50%;      /* or whatever width you like */
+    height: auto;    /* keeps aspect ratio */
+    padding: 2%;
 }
 
 .profile-details{
@@ -508,7 +694,6 @@ h1 {
     padding: 2% 2% 2% 2%;
 
 }
-
 }
 
 @media screen and (min-width:901px){
@@ -519,7 +704,7 @@ h1 {
 }
 
 .footer-logo{
-    width: 10%;
+    width: 15%;
     height: auto;
 }
 
@@ -534,24 +719,40 @@ main {
 }
 
 /*mission*/
+.mission-statement{
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    background-color: rgba(223, 229, 232, 1);
+    min-height: 75vh;
+    width: 100%;
+    overflow: hidden;
+}
 
 h1 {
+    font-size: 4rem;
+    font-weight: 300;
     color: rgba(54, 61, 71, 1);
-    margin-top: 5%;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-align: center; /* Center aligning the title */
-    margin-bottom: 15px; /* Space below the title */
+    margin-left: 8%;
+    margin-right: 4%;
 }
 
-.mission-statement{
-    background-color: rgba(223, 229, 232, 1);
-    align-items: center;
-    text-align: center;
+.mission-statement h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(54, 61, 71, 1);
+    margin-left: 8%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+    grid-area: 1 / 1 / 2 / 2;
 }
 
-.mission-statement p{
-    padding: 1% 5% 1% 5%;
+.mission-statement p {
+    color: rgba(54, 61, 71, 1);
+    margin-left: 8%;
+    font-size: 1.25rem;
+    width: 60%;
 }
 
 .video-placeholder {
@@ -572,109 +773,156 @@ h1 {
 }
 
 /*Key offerings*/
-.key-offerings{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: rgba(223, 229, 232, 1);
+.key-offerings-container {
+    text-align: center; /* Ensures the title is centered */
+    width: 100%; /* Ensures full width */
+    padding-bottom: 30px; /* Adds spacing between the title and the icons */
 }
 
-.offering {
-    text-align: center;
-    padding-top: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 2%;
-}
-
-.offering img {
-    width: 15%;
-    height: auto;
-    margin-bottom: 1%;
-}
-
-/*Partners*/
-.partners{
-    background-color: rgba(145, 178, 189, 1);
-    align-items: center;
-    text-align: center;
-}
-
-.partners p{
-    padding: 2% 2% 2% 2%;
-}
-
-h2 {
+.section-title {
     color: rgba(54, 61, 71, 1);
-    margin-top: 2%;
+    margin-top: 5%;
+    font-style: normal;
+    font-size: 3.0rem;
+    text-align: center; /* Center aligning the title */
+    margin-bottom: 60px; /* Space below the title */
 }
 
-
-.button {
+.button.prev, .button.next {
     display: none;
 }
 
-.partners-logo {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.partner{
-    width: 25%;
-}
-
-.partners-logo img{
-    width: 50%;
-    height: 50%;
-}
-
-.partners-logo p{
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    padding: 2% 10% 2% 10%;
-    font-weight: 700;
-}
-
-/*CEO*/
-.Alasdair {
-    background-color:  rgba(223, 229, 232, 1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.icons-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ensures 4 icons in a row */
+    gap: 20px; /* Adjust spacing between icons */
+    max-width: 90%;
+    margin: 0 auto;
     justify-content: center;
-}
-
-.profile-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.profile-photo {
-    width: 30%;
-    height: auto;
-    padding: 2% 2% 2% 2%;
-}
-
-.profile-details{
-    width: 50%;
-    height: auto;
-    padding: 2% 2% 2% 2%;
-
-}
-
-.title-2{
+    align-items: start;
     text-align: center;
 }
 
-.linkedin-icon{
-    align-self: flex-start;
-    margin-top: 5%;
+.icon {
+    display: flex;           /* Stack image & title vertically */
+    flex-direction: column;
+    justify-content: flex-end;  /* Push the title to the bottom if images differ in height */
+    align-items: center;     /* Center image & title horizontally */
+    min-height: 180px;       /* Ensures enough height so that titles can align at bottom */
+    box-sizing: border-box;
 }
 
+.icon img {
+    max-width: 80px;     /* Adjust as desired */
+    height: auto;
+    margin-bottom: 10px; /* Space above the title */
+    display: block;
+}
+
+.icon-title {
+    margin: 0;      /* Remove default paragraph margins */
+    font-size: 1.2rem;    /* Adjust as desired */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.icon-subtitle {
+    font-size: 1.0rem;  /* Adjusted font size */
+    font-weight: 400;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 10px;  /* Space between the icon and its title */
+    margin-bottom: 2.5rem;
+}
+
+/* New Partners Section */
+.partners-section {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(145, 178, 189, 1);
+    min-height: 75vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.partners-section h1 {
+    margin-bottom: 1rem; /* or any spacing you prefer */
+}
+
+.container h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(54, 61, 71, 1);
+    margin-left: 8%;
+    margin-right: 4%;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.partners-section .container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(145, 178, 189, 1);
+    min-height: 75vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.partners-section .container p {
+    color: rgba(54, 61, 71, 1);
+    margin-left: 8%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 1.25rem;
+    width: 60%;
+}
+
+.partners-section .container ul {
+    color: rgba(54, 61, 71, 1);
+    list-style: disc;
+    margin-left: 12%; /* or whatever suits your layout */
+    font-size: 1.25rem;
+    width: 50%;
+}
+
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.partner-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: calc(25% - 20px);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.partner-card .logo img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.partner-info h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #222;
+}
+
+.partner-info p {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.4;
+}
 
 }

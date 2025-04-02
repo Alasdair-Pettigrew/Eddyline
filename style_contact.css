@@ -175,12 +175,26 @@ main {
     width: 100%;
 }
 
+h1 {
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 15%;
+}
+
 h2 {
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
     color: rgba(54, 61, 71, 1);
     margin-top: 5%;
+}
+
+.title-2{
     font-style: normal;
     font-size: 1.5rem;
-    text-align: center; /* Center aligning the title */
+    color: rgba(54, 61, 71, 1);
+    text-align: left; /* Center aligning the title */
     margin-bottom: 15px; /* Space below the title */
 }
 
@@ -193,9 +207,10 @@ h2 {
 }
 
 .contact p {
-    text-align: center; /* Center aligning the paragraph text */
-    margin-bottom: 20px; /* Space below the paragraph */
+    text-align: left; /* Center aligning the paragraph text */
+    margin-bottom: 10px; /* Space below the paragraph */
     line-height: 1.6; /* Increased line height for readability */
+    max-width: 90%;  /* Adjusts width for mobile */
 }
 
 #p2{
@@ -203,20 +218,27 @@ h2 {
 }
 
 .contact-details {
-    margin-bottom: 20px; /* Space above the form */
+    text-align: left;
+    padding-left: 0; /* Removes any padding pushing content right */
+    margin-left: 0; /* Ensures the entire section is aligned left */
+    margin-top: 30px;  /* Adds space above the contact details */
+    margin-bottom: 50px; /* Adds more space below the contact details */
 }
 
 .contact-info {
     display: flex;
-    align-items: center; /* Vertically aligns the icon with the text */
-    justify-content: center; /* Horizontally center content */
-    margin-bottom: 10px; /* Space between contact details */
+    align-items: flex-start; /* Aligns icon with the top of the text */
+    justify-content: flex-start; /* Ensures everything is left-aligned */
+    gap: 15px; /* Adjust spacing between icon and text */
+    width: 100%;
+    margin-bottom: 15px; /* Adds spacing between lines */
+    padding-left: 0; /* Removes any unintended padding */
 }
 
 .contact-icon {
-    width: 30px; /* Size of the icons */
-    height: 30px; /* Maintaining aspect ratio */
+    height: 30px; /* Maintains aspect ratio */
     margin-right: 10px; /* Space between icon and text */
+    padding-left: 0; /* Ensures no extra padding is applied */
 }
 
 .contact-form {
@@ -224,7 +246,8 @@ h2 {
     padding: 15px;
     border-radius: 8px; /* Rounded corners for the form */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    margin-top: 10%;
+    margin: 8% 10% 2% 10%;
+    border-radius: 8px;
 }
 
 .form-field {
@@ -248,7 +271,7 @@ input, textarea {
 
 .submit-button {
     border: 3px solid rgba(54, 61, 71, 1);
-    border-radius: 0;
+    border-radius: 10px;
     padding: 2% 2%;  /* You might consider changing percentage padding to fixed padding for more consistent rendering */
     text-transform: uppercase;
     font-weight: bold;
@@ -266,14 +289,19 @@ input, textarea {
 /*CTA links*/
 #consult {
     border: 3px solid rgba(54, 61, 71, 1);
-    border-radius: 0;
-    padding: 2% 2%;
-    text-transform: uppercase; 
-    font-weight: bold; 
+    border-radius: 10px;
+    padding: 1% 1%;
+    text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
     text-decoration: none;
     color: rgba(54, 61, 71, 1);
-    margin-top: 5%;
+    margin-top: 5px;
+    margin-bottom: 2%;
+    max-width: 150px; /* Limits the button width */
+    display: block; /* Ensures it behaves like a block element */
+    margin-left: auto; /* Centers the button */
+    margin-right: auto; /* Centers the button */
 }
 
 }
@@ -295,9 +323,25 @@ main {
     background-color: rgba(223, 229, 232, 1);
 }
 
+.contact h1 {
+    font-size: 3.25rem;
+    font-weight: 300;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 15%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+}
+
 .title-2{
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: rgba(54, 61, 71, 1);
     text-align: center; /* Center aligning the title */
     margin-bottom: 15px; /* Space below the title */
@@ -314,35 +358,41 @@ main {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    text-align: center;
-    gap: 2%;
 }
 
-#p2{
-    margin-bottom: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
+.contact p {
     text-align: center;
-    line-height: 1.6;
+    margin: 10px auto;  /* Adds space above and below */
+    line-height: 1.6; /* Increased line height for readability */
+    max-width: 90%;  /* Adjusts width for mobile */
 }
 
-#p1{
-    display: none;
+#p2 {
+    padding-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .contact-details {
-    margin-bottom: 20px; /* Space above the form */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px; /* Increase the gap above the contact details */
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .contact-info {
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    margin-bottom: 10px; 
+    align-items: center; /* Aligns icon and text in a row */
+    justify-content: center; /* Centers everything */
+    gap: 10px; /* Ensures spacing between the icon and text */
+    white-space: nowrap;
 }
 
 .contact-icon {
-    width: 30px; /* Size of the icons */
     height: 30px; /* Maintaining aspect ratio */
     margin-right: 10px; /* Space between icon and text */
 }
@@ -350,9 +400,11 @@ main {
 .contact-form {
     background-color: rgba(145, 178, 189, 1);
     padding: 2% 2%;
-    width: 50%;
+    width: 70%;
     justify-self: center;
     align-self: center;
+    margin: 4% 10% 2% 10%;
+    border-radius: 8px;
 }
 
 .form-field {
@@ -376,7 +428,7 @@ input, textarea {
 
 .submit-button {
     border: 3px solid rgba(54, 61, 71, 1);
-    border-radius: 0;
+    border-radius: 10px;
     padding: 2% 2%;  /* You might consider changing percentage padding to fixed padding for more consistent rendering */
     text-transform: uppercase;
     font-weight: bold;
@@ -394,19 +446,19 @@ input, textarea {
 /*CTA link*/
 #consult {
     border: 3px solid rgba(54, 61, 71, 1);
-    border-radius: 0;
-    padding: 2% 2%;
-    text-transform: uppercase; 
-    font-weight: bold; 
+    border-radius: 10px;
+    padding: 1% 1%;
+    text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
     text-decoration: none;
     color: rgba(54, 61, 71, 1);
-    margin-top: 5%;
-    margin-bottom: 5%;
-    display: flex;
-    justify-content: center;
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-top: 5px;
+    margin-bottom: 2%;
+    max-width: 200px; /* Limits the button width */
+    display: block; /* Ensures it behaves like a block element */
+    margin-left: auto; /* Centers the button */
+    margin-right: auto; /* Centers the button */
 }
 }
 
@@ -427,9 +479,24 @@ main {
     background-color: rgba(223, 229, 232, 1);
 }
 
+.contact h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(54, 61, 71, 1);
+    margin-bottom: 15px; /* Space below the title */
+    text-align: center;
+}
+
+h2 {
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(54, 61, 71, 1);
+    margin-bottom: 15px; /* Space below the title */
+}
+
 .title-2{
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: rgba(54, 61, 71, 1);
     text-align: center; /* Center aligning the title */
     margin-bottom: 15px; /* Space below the title */
@@ -446,33 +513,40 @@ main {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    text-align: center;
-    gap: 2%;
 }
 
 .contact p {
-    line-height: 1.6; /* Increased line height for readability */
+    text-align: center;
+    margin: 10px auto;  /* Adds space above and below */
+    line-height: 1.8;    /* Improve readability */
+    max-width: 1000px;    /* Limits text width */
 }
 
-#p2{
+#p2 {
     padding-bottom: 2%;
     margin-left: 20%;
     margin-right: 20%;
 }
 
 .contact-details {
-    margin-bottom: 20px; /* Space above the form */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px; /* Increase the gap above the contact details */
+    margin-bottom: 40px;
+    width: 100%;
 }
 
 .contact-info {
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    margin-bottom: 10px; 
+    align-items: center; /* Aligns icon and text in a row */
+    justify-content: center; /* Centers everything */
+    gap: 10px; /* Ensures spacing between the icon and text */
 }
 
 .contact-icon {
-    width: 30px; /* Size of the icons */
     height: 30px; /* Maintaining aspect ratio */
     margin-right: 10px; /* Space between icon and text */
 }
@@ -480,9 +554,11 @@ main {
 .contact-form {
     background-color: rgba(145, 178, 189, 1);
     padding: 2% 2%;
-    width: 50%;
+    width: 60%;
     justify-self: center;
     align-self: center;
+    margin: 2% 10% 2% 10%;
+    border-radius: 8px;
 }
 
 .form-field {
@@ -506,7 +582,7 @@ input, textarea {
 
 .submit-button {
     border: 3px solid rgba(54, 61, 71, 1);
-    border-radius: 0;
+    border-radius: 10px;
     padding: 2% 2%;  /* You might consider changing percentage padding to fixed padding for more consistent rendering */
     text-transform: uppercase;
     font-weight: bold;
@@ -525,22 +601,21 @@ input, textarea {
     display: none;
 }
 
-
-
 /*CTA link*/
 #consult {
     border: 3px solid rgba(54, 61, 71, 1);
-    border-radius: 0;
-    padding: 1%;
-    text-transform: uppercase; 
-    font-weight: bold; 
+    border-radius: 10px;
+    padding: 1% 1%;
+    text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
     text-decoration: none;
     color: rgba(54, 61, 71, 1);
-    margin-bottom: 5%;
-    display: flex;
-    justify-content: center;
-    margin-right: 35%;
-    margin-left: 35%;
+    margin-top: 5px;
+    margin-bottom: 2%;
+    max-width: 300px; /* Limits the button width */
+    display: block; /* Ensures it behaves like a block element */
+    margin-left: auto; /* Centers the button */
+    margin-right: auto; /* Centers the button */
 }
 }
